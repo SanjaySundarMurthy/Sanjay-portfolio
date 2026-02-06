@@ -37,8 +37,8 @@ const Contact = ({ setCursorVariant }) => {
     {
       icon: HiPhone,
       label: 'Phone',
-      value: 'Available on request',
-      href: '#',
+      value: '+91 9901244652',
+      href: 'tel:+919901244652',
     },
     {
       icon: HiLocationMarker,
