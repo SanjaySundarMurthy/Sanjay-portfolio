@@ -141,11 +141,10 @@ const Hero = ({ setCursorVariant }) => {
             View My Work
             <HiArrowDown className="animate-bounce" />
           </motion.a>
+          {/* DOWNLOAD CV BUTTON - CURRENTLY DISABLED
+              To enable: Uncomment the motion.a element below and remove this comment block
+          */}
           {/* 
-          ============================================
-          DOWNLOAD CV BUTTON - CURRENTLY DISABLED
-          To enable: Remove the {/* and */} comments around this section
-          ============================================
           <motion.a
             href="/Sanjay_S_Resume.pdf"
             download="Sanjay_S_Resume.pdf"
