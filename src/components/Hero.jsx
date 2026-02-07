@@ -141,6 +141,11 @@ const Hero = ({ setCursorVariant }) => {
             View My Work
             <HiArrowDown className="animate-bounce" />
           </motion.a>
+          {/* 
+          ============================================
+          DOWNLOAD CV BUTTON - CURRENTLY DISABLED
+          To enable: Remove the {/* and */} comments around this section
+          ============================================
           <motion.a
             href="/Sanjay_S_Resume.pdf"
             download="Sanjay_S_Resume.pdf"
@@ -153,6 +158,7 @@ const Hero = ({ setCursorVariant }) => {
             <HiDownload />
             Download CV
           </motion.a>
+          */}
         </motion.div>
 
         {/* Social Links */}
