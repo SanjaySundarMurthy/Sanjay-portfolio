@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
 import {
   HiMail,
   HiPhone,
@@ -63,17 +64,37 @@ const Contact = ({ setCursorVariant }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Sanjay',
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-    // For demo purposes, always succeed
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-
-    // Reset status after 5 seconds
-    setTimeout(() => setSubmitStatus(null), 5000);
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const containerVariants = {
