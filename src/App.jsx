@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import Loader from './components/Loader';
+import Chatbot from './components/Chatbot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
               <Contact setCursorVariant={setCursorVariant} />
             </main>
             <Footer setCursorVariant={setCursorVariant} />
+            <Chatbot />
           </motion.div>
         )}
       </AnimatePresence>
