@@ -128,7 +128,7 @@ const Chatbot = () => {
       }
 
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
       const chat = model.startChat({
         history: [
@@ -163,6 +163,8 @@ const Chatbot = () => {
       
       if (error.message === 'API key not configured') {
         errorMessage = "⚙️ The AI assistant is being configured. Please contact Sanjay directly at sanjaysundarmurthy@gmail.com";
+      } else if (error.message?.includes('429') || error.toString().includes('429') || error.toString().includes('quota')) {
+        errorMessage = "⏳ I'm a bit busy right now! Please wait a few seconds and try again, or contact Sanjay at sanjaysundarmurthy@gmail.com";
       }
       
       setMessages((prev) => [
