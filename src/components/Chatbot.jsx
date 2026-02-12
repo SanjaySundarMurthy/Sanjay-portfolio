@@ -120,8 +120,15 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      
+      // Check if API key exists
+      if (!apiKey || apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
+        throw new Error('API key not configured');
+      }
+
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
       const chat = model.startChat({
         history: [
@@ -150,12 +157,17 @@ const Chatbot = () => {
       ]);
     } catch (error) {
       console.error('Chatbot Error:', error);
+      
+      // Provide more helpful error messages
+      let errorMessage = "I apologize, but I'm having trouble connecting right now. Please try again or contact Sanjay directly at sanjaysundarmurthy@gmail.com 📧";
+      
+      if (error.message === 'API key not configured') {
+        errorMessage = "⚙️ The AI assistant is being configured. Please contact Sanjay directly at sanjaysundarmurthy@gmail.com";
+      }
+      
       setMessages((prev) => [
         ...prev,
-        {
-          role: 'assistant',
-          content: "I apologize, but I'm having trouble connecting right now. Please try again or contact Sanjay directly at sanjaysundarmurthy@gmail.com 📧",
-        },
+        { role: 'assistant', content: errorMessage },
       ]);
     } finally {
       setIsLoading(false);
