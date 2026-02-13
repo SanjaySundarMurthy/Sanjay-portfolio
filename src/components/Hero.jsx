@@ -35,7 +35,7 @@ const Hero = ({ setCursorVariant }) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -161,7 +161,7 @@ const Hero = ({ setCursorVariant }) => {
         </motion.div>
 
         {/* Social Links */}
-        <motion.div variants={itemVariants} className="flex items-center justify-center gap-4">
+        <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 mb-16">
           {socialLinks.map((social, index) => (
             <motion.a
               key={social.label}
@@ -188,7 +188,7 @@ const Hero = ({ setCursorVariant }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
