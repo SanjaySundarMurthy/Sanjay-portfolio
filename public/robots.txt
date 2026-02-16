@@ -1,0 +1,11 @@
+# Robots.txt for Sanjay S Portfolio
+# https://sanjaysundarmurthy-portfolio.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sanjaysundarmurthy-portfolio.vercel.app/sitemap.xml
+
+# Crawl delay (optional, be nice to search engines)
+Crawl-delay: 1

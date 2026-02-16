@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OG Image Generator - Sanjay Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    .og-container {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Gradient orbs */
+    .orb1 {
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .orb2 {
+      position: absolute;
+      bottom: -150px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    /* Grid pattern */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      margin-bottom: 30px;
+    }
+    
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+    
+    .badge-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: #94a3b8;
+    }
+    
+    .name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0ea5e9, #a78bfa, #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 30px;
+    }
+    
+    .skills {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .skill {
+      padding: 12px 24px;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      color: #38bdf8;
+    }
+    
+    .url {
+      position: absolute;
+      bottom: 30px;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="og-container">
+    <div class="orb1"></div>
+    <div class="orb2"></div>
+    <div class="grid"></div>
+    
+    <div class="content">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        <span class="badge-text">Open to Opportunities</span>
+      </div>
+      
+      <h1 class="name">Sanjay S</h1>
+      <p class="title">Senior DevOps Engineer</p>
+      
+      <div class="skills">
+        <span class="skill">Azure</span>
+        <span class="skill">Kubernetes</span>
+        <span class="skill">Terraform</span>
+        <span class="skill">CI/CD</span>
+        <span class="skill">Docker</span>
+      </div>
+    </div>
+    
+    <p class="url">sanjaysundarmurthy-portfolio.vercel.app</p>
+  </div>
+  
+  <div style="margin: 20px; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+    <h2>📸 How to Create Your OG Image:</h2>
+    <ol style="margin-top: 10px; line-height: 2;">
+      <li>Open this file in Chrome browser</li>
+      <li>Press <strong>F12</strong> to open DevTools</li>
+      <li>Press <strong>Ctrl + Shift + P</strong></li>
+      <li>Type "screenshot" and select <strong>"Capture node screenshot"</strong></li>
+      <li>Click on the purple card above</li>
+      <li>Save as <strong>og-image.png</strong> in your <strong>public</strong> folder</li>
+    </ol>
+    <p style="margin-top: 15px; color: #666;">
+      Or use <a href="https://www.canva.com" target="_blank">Canva</a> (free) to create a 1200x630 image!
+    </p>
+  </div>
+</body>
+</html>
