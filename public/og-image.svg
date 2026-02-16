@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    
+    <!-- Cyan gradient for text -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="50%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Orb gradients -->
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0"/>
+    </radialGradient>
+    
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.05">
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#grid)"/>
+  </g>
+  
+  <!-- Decorative orbs -->
+  <ellipse cx="100" cy="100" rx="300" ry="300" fill="url(#orb1)"/>
+  <ellipse cx="1100" cy="530" rx="400" ry="400" fill="url(#orb2)"/>
+  <ellipse cx="600" cy="315" rx="500" ry="500" fill="url(#orb1)" opacity="0.1"/>
+  
+  <!-- Decorative lines -->
+  <g stroke="url(#cyanGrad)" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="200" x2="200" y2="0"/>
+    <line x1="1000" y1="630" x2="1200" y2="430"/>
+    <line x1="50" y1="630" x2="150" y2="530"/>
+    <line x1="1050" y1="100" x2="1200" y2="100"/>
+  </g>
+  
+  <!-- Status badge -->
+  <g transform="translate(600, 140)">
+    <rect x="-140" y="-20" width="280" height="40" rx="20" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <circle cx="-110" cy="0" r="6" fill="#22c55e">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="6" font-family="Inter, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Open to Opportunities</text>
+  </g>
+  
+  <!-- Main name -->
+  <text x="600" y="250" font-family="Space Grotesk, Arial Black, sans-serif" font-size="90" font-weight="700" fill="url(#cyanGrad)" text-anchor="middle" filter="url(#glow)">SANJAY S</text>
+  
+  <!-- Title -->
+  <text x="600" y="320" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="600" fill="#e2e8f0" text-anchor="middle">Senior DevOps Engineer</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="365" font-family="Inter, Arial, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">5+ Years Experience • Azure Expert • Kubernetes Specialist</text>
+  
+  <!-- Skill badges -->
+  <g transform="translate(600, 430)">
+    <!-- Azure -->
+    <g transform="translate(-280, 0)">
+      <rect x="-55" y="-22" width="110" height="44" rx="8" fill="rgba(14,165,233,0.15)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
+      <text x="0" y="7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#38bdf8" text-anchor="middle">☁️ Azure</text>
+    </g>
+    
+    <!-- Kubernetes -->
+    <g transform="translate(-140, 0)">
+      <rect x="-65" y="-22" width="130" height="44" rx="8" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+      <text x="0" y="7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#a78bfa" text-anchor="middle">⚙️ Kubernetes</text>
+    </g>
+    
+    <!-- Terraform -->
+    <g transform="translate(0, 0)">
+      <rect x="-60" y="-22" width="120" height="44" rx="8" fill="rgba(14,165,233,0.15)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
+      <text x="0" y="7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#38bdf8" text-anchor="middle">🏗️ Terraform</text>
+    </g>
+    
+    <!-- CI/CD -->
+    <g transform="translate(130, 0)">
+      <rect x="-50" y="-22" width="100" height="44" rx="8" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+      <text x="0" y="7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#a78bfa" text-anchor="middle">🔄 CI/CD</text>
+    </g>
+    
+    <!-- Docker -->
+    <g transform="translate(250, 0)">
+      <rect x="-50" y="-22" width="100" height="44" rx="8" fill="rgba(14,165,233,0.15)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
+      <text x="0" y="7" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#38bdf8" text-anchor="middle">🐳 Docker</text>
+    </g>
+  </g>
+  
+  <!-- Stats bar -->
+  <g transform="translate(600, 510)">
+    <text x="-250" y="0" font-family="Inter, Arial, sans-serif" font-size="16" fill="#64748b" text-anchor="middle">
+      <tspan font-weight="700" fill="#0ea5e9">99.9%</tspan> Uptime
+    </text>
+    <text x="-80" y="0" font-family="Inter, Arial, sans-serif" font-size="16" fill="#64748b" text-anchor="middle">
+      <tspan font-weight="700" fill="#a78bfa">50+</tspan> Pipelines
+    </text>
+    <text x="80" y="0" font-family="Inter, Arial, sans-serif" font-size="16" fill="#64748b" text-anchor="middle">
+      <tspan font-weight="700" fill="#0ea5e9">100+</tspan> Microservices
+    </text>
+    <text x="250" y="0" font-family="Inter, Arial, sans-serif" font-size="16" fill="#64748b" text-anchor="middle">
+      <tspan font-weight="700" fill="#a78bfa">🏆</tspan> Award Winner
+    </text>
+  </g>
+  
+  <!-- URL footer -->
+  <text x="600" y="590" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569" text-anchor="middle">sanjaysundarmurthy-portfolio.vercel.app</text>
+  
+  <!-- Corner accent -->
+  <g>
+    <polygon points="0,0 150,0 0,150" fill="url(#cyanGrad)" opacity="0.1"/>
+    <polygon points="1200,630 1050,630 1200,480" fill="url(#cyanGrad)" opacity="0.1"/>
+  </g>
+  
+  <!-- Border accent -->
+  <rect x="4" y="4" width="1192" height="622" rx="12" fill="none" stroke="url(#cyanGrad)" stroke-width="2" opacity="0.3"/>
+</svg>
