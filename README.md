@@ -1,11 +1,13 @@
 # 🚀 Sanjay S - DevOps Engineer Portfolio
 
-A stunning, modern, and responsive web portfolio built with React, Vite, and Tailwind CSS. This portfolio showcases my professional experience, technical skills, projects, and certifications as a Senior DevOps Engineer.
+A stunning, modern, and responsive web portfolio built with React, Vite, and Tailwind CSS. Features an AI-powered chatbot, contact form, SEO optimization, and Google Analytics tracking.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen)
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7.2.5-646CFF?logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwind-css)
+
+🌐 **Live:** [sanjaysundarmurthy-portfolio.vercel.app](https://sanjaysundarmurthy-portfolio.vercel.app)
 
 ---
 
@@ -16,8 +18,12 @@ A stunning, modern, and responsive web portfolio built with React, Vite, and Tai
 - **Interactive Elements** - Custom cursor effects, particle background, and hover animations
 - **Fully Responsive** - Optimized for all screen sizes (mobile, tablet, desktop)
 - **Fast Performance** - Built with Rolldown-Vite for lightning-fast builds
-- **Contact Form** - Integrated with EmailJS for direct messaging
-- **Downloadable Resume** - One-click PDF resume download
+- **🤖 AI Chatbot** - Google Gemini-powered assistant that knows everything about Sanjay
+- **📧 Contact Form** - Integrated with EmailJS for direct messaging
+- **📊 Google Analytics** - Track visitors and engagement
+- **🔍 SEO Optimized** - Meta tags, Open Graph, sitemap, robots.txt, JSON-LD structured data
+- **🖼️ OG Image** - Beautiful preview cards when shared on LinkedIn/Facebook
+- **📱 PWA Ready** - Can be installed as a mobile/desktop app
 
 ---
 
@@ -29,9 +35,12 @@ A stunning, modern, and responsive web portfolio built with React, Vite, and Tai
 | **Styling** | Tailwind CSS 4, Custom CSS |
 | **Animations** | Framer Motion |
 | **Build Tool** | Vite (Rolldown) |
-| **Icons** | React Icons (Font Awesome, Simple Icons) |
-| **Form Handling** | EmailJS |
+| **AI Chatbot** | Google Gemini AI (gemini-2.5-flash) |
+| **Contact Form** | EmailJS |
+| **Analytics** | Google Analytics 4 |
+| **Icons** | React Icons (Font Awesome, Simple Icons, Heroicons) |
 | **Type Animation** | react-type-animation |
+| **Hosting** | Vercel (auto-deploy from GitHub) |
 
 ---
 
@@ -40,13 +49,20 @@ A stunning, modern, and responsive web portfolio built with React, Vite, and Tai
 ```
 Web-portfolio/
 ├── public/
-│   ├── Sanjay_S_Resume.pdf    # Downloadable resume
-│   └── vite.svg               # Favicon
+│   ├── favicon.svg            # Custom "S" branded favicon
+│   ├── og-image.svg           # OG image source (SVG)
+│   ├── og-image.png           # OG image for social sharing (1200x630)
+│   ├── robots.txt             # Search engine crawl rules
+│   ├── sitemap.xml            # Sitemap for Google indexing
+│   ├── site.webmanifest       # PWA manifest
+│   └── Sanjay_S_Resume.pdf    # Downloadable resume (optional)
+├── scripts/
+│   └── convert-og-image.js    # SVG to PNG converter for OG image
 ├── src/
-│   ├── assets/                # Static assets
 │   ├── components/
 │   │   ├── About.jsx          # About section with bio & stats
-│   │   ├── Contact.jsx        # Contact form with EmailJS
+│   │   ├── Chatbot.jsx        # 🤖 AI chatbot (Google Gemini)
+│   │   ├── Contact.jsx        # Contact form (EmailJS)
 │   │   ├── CustomCursor.jsx   # Interactive cursor effect
 │   │   ├── Experience.jsx     # Timeline of work & education
 │   │   ├── Footer.jsx         # Footer with social links
@@ -59,10 +75,11 @@ Web-portfolio/
 │   ├── App.jsx                # Main application component
 │   ├── index.css              # Global styles & Tailwind config
 │   └── main.jsx               # React entry point
-├── .eslintrc.cjs              # ESLint configuration
+├── .env.local                 # 🔒 API keys (NOT in Git)
 ├── .gitignore                 # Git ignore rules
-├── eslint.config.js           # ESLint flat config
-├── index.html                 # HTML entry point
+├── eslint.config.js           # ESLint config
+├── index.html                 # HTML with SEO meta tags & Analytics
+├── og-image-generator.html    # Visual OG image template
 ├── package.json               # Dependencies & scripts
 ├── vite.config.js             # Vite configuration
 └── README.md                  # This file
@@ -74,14 +91,15 @@ Web-portfolio/
 
 ### Prerequisites
 
-- **Node.js** (v18 or higher recommended)
-- **npm** (v9 or higher) or **yarn**
+- **Node.js** (v18 or higher)
+- **npm** (v9 or higher)
+- **Git**
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/SanjaySundarMurthy/web-portfolio.git
-cd web-portfolio
+git clone https://github.com/SanjaySundarMurthy/Sanjay-portfolio.git
+cd Sanjay-portfolio
 ```
 
 ### Step 2: Install Dependencies
@@ -90,48 +108,47 @@ cd web-portfolio
 npm install
 ```
 
-This will install all required packages including:
-- React 19
-- Tailwind CSS 4
-- Framer Motion
-- React Icons
-- EmailJS
-- And more...
+### Step 3: Set Up Environment Variables
 
-### Step 3: Start Development Server
+Create a `.env.local` file in the project root:
+
+```env
+# EmailJS Configuration (for contact form)
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+# Google Gemini AI Configuration (for chatbot)
+VITE_GEMINI_API_KEY=your_gemini_api_key
+```
+
+> ⚠️ **IMPORTANT:** Never commit `.env.local` to Git. It's already in `.gitignore`.
+
+### Step 4: Start Development Server
 
 ```bash
 npm run dev
 ```
 
-### Step 4: Open in Browser
+### Step 5: Open in Browser
 
-Navigate to:
 ```
 http://localhost:5173
 ```
-
-You should see the portfolio running with hot module replacement (HMR) enabled.
 
 ---
 
 ## 📦 Build for Production
 
-### Create Production Build
-
 ```bash
+# Create optimized production build
 npm run build
-```
 
-This creates an optimized production build in the `dist/` folder.
-
-### Preview Production Build
-
-```bash
+# Preview production build locally
 npm run preview
 ```
 
-This starts a local server to preview the production build.
+The build output goes to the `dist/` folder.
 
 ---
 
@@ -139,166 +156,255 @@ This starts a local server to preview the production build.
 
 | Script | Command | Description |
 |--------|---------|-------------|
-| **Development** | `npm run dev` | Start development server with hot reload |
+| **Development** | `npm run dev` | Start dev server with hot reload |
 | **Build** | `npm run build` | Create optimized production build |
 | **Preview** | `npm run preview` | Preview production build locally |
-| **Lint** | `npm run lint` | Run ESLint for code quality checks |
+| **Lint** | `npm run lint` | Run ESLint for code quality |
 
 ---
 
-## 🎨 Customization Guide
+## 🔧 Configuration Guide
 
-### 1. Update Personal Information
+### 1. EmailJS (Contact Form)
 
-#### Hero Section (`src/components/Hero.jsx`)
-- Name and title
-- Introduction text
-- Social media links
-- Resume download link
+The contact form sends emails directly without a backend server.
 
-#### About Section (`src/components/About.jsx`)
-- Professional bio paragraphs
-- Stats (years experience, projects completed, etc.)
-- Location and email
-
-#### Experience Section (`src/components/Experience.jsx`)
-- Work history timeline
-- Company names and roles
-- Education details
-- Technologies used at each position
-
-#### Skills Section (`src/components/Skills.jsx`)
-- Skill categories and proficiency levels
-- "Also Experienced With" badges
-- Certifications and awards
-
-#### Projects Section (`src/components/Projects.jsx`)
-- Project cards with descriptions
-- GitHub repository links
-- Technology tags
-
-#### Contact Section (`src/components/Contact.jsx`)
-- Email address
-- Phone (optional)
-- Location
-- Social media links
-
-### 2. Update Resume
-
-Replace the file at:
-```
-public/Sanjay_S_Resume.pdf
-```
-
-### 3. Configure EmailJS (Contact Form)
-
-1. Create an account at [EmailJS](https://www.emailjs.com/)
+**Setup Steps:**
+1. Create account at [emailjs.com](https://www.emailjs.com/) (free tier: 200 emails/month)
 2. Create an email service (Gmail, Outlook, etc.)
-3. Create an email template
-4. Update `src/components/Contact.jsx`:
+3. Create an email template with these variables:
+   - `{{from_name}}` - Sender's name
+   - `{{from_email}}` - Sender's email
+   - `{{subject}}` - Email subject
+   - `{{message}}` - Email message
+4. Copy your Service ID, Template ID, and Public Key
+5. Add to `.env.local`:
+   ```
+   VITE_EMAILJS_SERVICE_ID=service_xxxxx
+   VITE_EMAILJS_TEMPLATE_ID=template_xxxxx
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+6. Add the same variables to **Vercel → Settings → Environment Variables**
 
-```javascript
-emailjs.sendForm(
-  'YOUR_SERVICE_ID',     // Replace with your service ID
-  'YOUR_TEMPLATE_ID',    // Replace with your template ID
-  formRef.current,
-  'YOUR_PUBLIC_KEY'      // Replace with your public key
-)
-```
+---
 
-### 4. Change Theme Colors
+### 2. AI Chatbot (Google Gemini)
 
-Edit `src/index.css` and modify the `@theme` section:
+The chatbot uses Google Gemini AI to answer questions about Sanjay's profile.
+
+**Setup Steps:**
+1. Go to [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+2. Click **"Create API key in new project"**
+3. Copy the API key (starts with `AIzaSy...`)
+4. Add to `.env.local`:
+   ```
+   VITE_GEMINI_API_KEY=AIzaSy_xxxxx
+   ```
+5. Add the same variable to **Vercel → Settings → Environment Variables**
+
+**Customizing Chatbot Context:**
+- Edit `src/components/Chatbot.jsx`
+- Update the `SANJAY_CONTEXT` constant with your information
+- This tells the AI what it knows about you (experience, skills, projects, etc.)
+
+**Model:** `gemini-2.5-flash` (free tier: 15 requests/min, 1500 requests/day)
+
+**Important Notes:**
+- Vite env variables are embedded at **build time**
+- After changing keys in Vercel → you MUST **Redeploy without cache**
+- If you get 429 errors → rate limit hit, wait 30 seconds
+- If quota fully exhausted → create a new API key in a new GCP project
+
+---
+
+### 3. Google Analytics
+
+Track visitors, traffic sources, and engagement.
+
+**Setup Steps:**
+1. Go to [analytics.google.com](https://analytics.google.com/)
+2. Create a property for your portfolio
+3. Get the Measurement ID (e.g., `G-XXXXXXXXXX`)
+4. Edit `index.html` — replace `G-XXXXXXXXXX` with your Measurement ID (appears in 2 places)
+5. Push to GitHub — Vercel auto-deploys
+
+**View Dashboard:** [analytics.google.com](https://analytics.google.com/) (data starts appearing in 24-48 hours)
+
+**What you can track:**
+- 👥 Total visitors
+- 🌍 Geographic location
+- 📱 Device types (mobile/desktop)
+- 🔗 Traffic sources (LinkedIn, Google, Direct)
+- ⏱️ Time spent on site
+- 📈 Trends over time
+
+**Cost:** 100% FREE, no limits, no credit card required.
+
+---
+
+### 4. SEO & Social Sharing
+
+**Already configured in `index.html`:**
+- ✅ SEO meta tags (title, description, keywords, author)
+- ✅ Open Graph tags (LinkedIn/Facebook preview cards)
+- ✅ JSON-LD structured data (rich Google search results)
+- ✅ Canonical URL
+- ✅ Sitemap (`public/sitemap.xml`)
+- ✅ Robots.txt (`public/robots.txt`)
+
+**To update the OG image:**
+1. Edit `public/og-image.svg` (source design)
+2. Convert to PNG: `node scripts/convert-og-image.js`
+3. Push to GitHub
+
+**Test your social preview:**
+- [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) — enter your URL
+- [OpenGraph Preview](https://www.opengraph.xyz/) — preview all platforms
+
+---
+
+### 5. Theme Colors
+
+Edit `src/index.css` — modify the `@theme` section:
 
 ```css
 @theme {
-  --color-primary-*: /* Your primary color shades */
-  --color-accent-*:  /* Your accent color shades */
-  --color-dark-*:    /* Your dark theme shades */
+  --color-primary-*: /* Cyan shades (main accent) */
+  --color-accent-*:  /* Purple shades (secondary accent) */
+  --color-dark-*:    /* Dark theme background shades */
 }
 ```
 
 ---
 
-## 🌐 Deployment Guide
+### 6. Personal Information Update Guide
 
-### Option 1: Vercel (Recommended)
-
-1. Push code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "Import Project"
-4. Select your repository
-5. Deploy with default settings
-
-**Build Settings:**
-- Build Command: `npm run build`
-- Output Directory: `dist`
-
-### Option 2: Netlify
-
-1. Push code to GitHub
-2. Go to [netlify.com](https://netlify.com)
-3. Click "Add new site" → "Import an existing project"
-4. Connect your GitHub repository
-5. Configure build settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-6. Click "Deploy site"
-
-### Option 3: GitHub Pages
-
-1. Install gh-pages:
-   ```bash
-   npm install -D gh-pages
-   ```
-
-2. Add deploy script to `package.json`:
-   ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
-   ```
-
-3. Update `vite.config.js`:
-   ```javascript
-   export default defineConfig({
-     base: '/web-portfolio/',
-     // ... other config
-   })
-   ```
-
-4. Deploy:
-   ```bash
-   npm run deploy
-   ```
-
-### Option 4: Azure Static Web Apps
-
-1. Push code to GitHub
-2. Go to Azure Portal
-3. Create a new Static Web App
-4. Connect to your GitHub repository
-5. Configure build settings:
-   - App location: `/`
-   - Output location: `dist`
-   - Build command: `npm run build`
+| What to Update | File | What to Change |
+|----------------|------|----------------|
+| Name, title, intro | `src/components/Hero.jsx` | Main heading & description text |
+| Bio, stats, info | `src/components/About.jsx` | Bio paragraphs, stat numbers, quick info |
+| Work history | `src/components/Experience.jsx` | Timeline entries (company, role, date, tech) |
+| Skills & certs | `src/components/Skills.jsx` | Skill categories, proficiency, certifications |
+| Projects | `src/components/Projects.jsx` | Project cards (name, description, GitHub URL, tags) |
+| Contact info | `src/components/Contact.jsx` | Email, phone, location |
+| Social links | `src/components/Hero.jsx` & `Footer.jsx` | GitHub & LinkedIn URLs |
+| AI chatbot context | `src/components/Chatbot.jsx` | Update `SANJAY_CONTEXT` constant |
+| Page title & SEO | `index.html` | Meta tags, JSON-LD structured data |
+| Resume | `public/Sanjay_S_Resume.pdf` | Replace with updated PDF |
 
 ---
 
-## 📱 Sections Overview
+## 🌐 Deployment
 
-| Section | Description |
-|---------|-------------|
-| **Loader** | Animated loading screen with logo |
-| **Navbar** | Responsive navigation with smooth scroll |
-| **Hero** | Landing page with animated introduction and CTAs |
-| **About** | Professional bio, stats, and quick info cards |
-| **Skills** | Technical skills with progress bars, certifications & awards |
-| **Experience** | Interactive timeline of work experience and education |
-| **Projects** | Showcase of GitHub projects with descriptions |
-| **Contact** | Contact form with EmailJS integration |
-| **Footer** | Copyright and social media links |
+### Vercel (Current Setup)
+
+The portfolio **auto-deploys** when you push to `main` branch.
+
+**Daily Workflow:**
+```bash
+# Make changes locally
+npm run dev          # Test at http://localhost:5173
+
+# Deploy
+git add .
+git commit -m "your message"
+git push origin main  # Vercel auto-deploys in ~1 min
+```
+
+**First-time Vercel Setup:**
+1. Go to [vercel.com](https://vercel.com) → Import Project
+2. Select your GitHub repo
+3. Build settings (auto-detected):
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. Add **Environment Variables** (Settings → Environment Variables):
+   ```
+   VITE_EMAILJS_SERVICE_ID     → your_service_id
+   VITE_EMAILJS_TEMPLATE_ID    → your_template_id
+   VITE_EMAILJS_PUBLIC_KEY     → your_public_key
+   VITE_GEMINI_API_KEY         → your_gemini_key
+   ```
+5. Deploy!
+
+**After changing environment variables in Vercel:**
+1. Go to **Deployments** → Click 3 dots → **Redeploy**
+2. ❌ **UNCHECK** "Use existing Build Cache"
+3. Click Redeploy
+
+> 💡 Vite bakes env variables at build time, so you MUST rebuild after changing them.
+
+---
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive across all devices:
+
+| Device | Breakpoint | Status |
+|--------|-----------|--------|
+| Mobile (small) | < 640px | ✅ Optimized |
+| Mobile (large) | 640px+ (sm) | ✅ Optimized |
+| Tablet | 768px+ (md) | ✅ Optimized |
+| Laptop | 1024px+ (lg) | ✅ Optimized |
+| Desktop | 1280px+ (xl) | ✅ Optimized |
+
+**Key responsive features:**
+- Hamburger menu on mobile
+- Stacking layouts on small screens
+- Font scaling across breakpoints
+- Full-width chatbot on mobile
+- Touch-friendly (custom cursor hidden on touch devices)
+- Canvas particles scale with screen size
+
+---
+
+## 🔑 Environment Variables Reference
+
+| Variable | Service | Where to Get | Required For | Cost |
+|----------|---------|-------------|--------------|------|
+| `VITE_EMAILJS_SERVICE_ID` | EmailJS | emailjs.com dashboard | Contact form | Free (200/mo) |
+| `VITE_EMAILJS_TEMPLATE_ID` | EmailJS | emailjs.com dashboard | Contact form | Free |
+| `VITE_EMAILJS_PUBLIC_KEY` | EmailJS | emailjs.com dashboard | Contact form | Free |
+| `VITE_GEMINI_API_KEY` | Google AI | aistudio.google.com/apikey | AI Chatbot | Free (1500/day) |
+
+> ⚠️ Set in **both** `.env.local` (local) and **Vercel Environment Variables** (production).
+
+---
+
+## 🔧 Troubleshooting
+
+### Chatbot Issues
+
+| Problem | Solution |
+|---------|----------|
+| "I'm having trouble connecting" | Check `VITE_GEMINI_API_KEY` in `.env.local` |
+| 404 error | Model name outdated — update in `Chatbot.jsx` |
+| 429 error (rate limit) | Wait 30 seconds and retry |
+| "limit: 0" (quota exhausted) | Create new API key in **new project** at aistudio.google.com |
+| Works locally, not on Vercel | Add env var to Vercel → Redeploy **without cache** |
+
+### Contact Form Issues
+
+| Problem | Solution |
+|---------|----------|
+| Form not sending | Verify 3 EmailJS env vars in `.env.local` |
+| Emails not received | Check EmailJS template has correct variable names |
+| Quota exceeded | Free tier = 200 emails/month |
+
+### Development Issues
+
+| Problem | Solution |
+|---------|----------|
+| Port 5173 in use | `npx kill-port 5173` or `npm run dev -- --port 3000` |
+| Vite cache error | `Remove-Item node_modules/.vite -Recurse -Force` then `npm run dev` |
+| Node modules broken | Delete `node_modules` & `package-lock.json`, run `npm install` |
+| Build fails | `npm run build -- --force` |
+
+### SEO Issues
+
+| Problem | Solution |
+|---------|----------|
+| OG image not showing on LinkedIn | Use [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) to clear cache |
+| Not appearing on Google | Submit sitemap at [Google Search Console](https://search.google.com/search-console) |
 
 ---
 
@@ -308,13 +414,13 @@ Edit `src/index.css` and modify the `@theme` section:
 
 | Category | Skills |
 |----------|--------|
-| **Cloud Platform** | Microsoft Azure (AKS, ADF, Databricks, App Services, SQL, Storage, Monitor, VM, Key Vault) |
-| **Containerization** | Docker, Kubernetes, Helm, ArgoCD, Ingress Controllers |
-| **CI/CD** | Azure DevOps, GitHub Actions (Enterprise), Jenkins, GitOps |
-| **Infrastructure as Code** | Terraform, Ansible, ARM Templates |
-| **Observability** | Azure Monitor, Prometheus, Grafana, ELK Stack, Application Insights |
-| **Security** | SonarQube, CodeQL, Trivy, SSL/TLS, Secrets Management |
-| **Scripting** | Python, PowerShell, Bash, YAML |
+| **Cloud** | Azure (AKS, ADF, App Services, Functions, Key Vault, Monitor), AWS, GCP |
+| **Containers** | Kubernetes, Docker, Helm, ArgoCD, Istio, Service Mesh |
+| **CI/CD** | Azure DevOps, GitHub Actions, Jenkins, GitOps, FluxCD |
+| **IaC** | Terraform, Ansible, ARM Templates, Bicep, Pulumi |
+| **Monitoring** | Prometheus, Grafana, ELK Stack, Azure Monitor, Datadog |
+| **Security** | SonarQube, Trivy, Snyk, Vault, OWASP, OPA/Gatekeeper |
+| **Languages** | Python, Bash, PowerShell, Go, YAML |
 
 ### Microsoft Certifications
 
@@ -329,29 +435,13 @@ Edit `src/index.css` and modify the `@theme` section:
 
 ---
 
-## 🔧 Troubleshooting
+## 🔒 Safety & Backup
 
-### Common Issues
+A safety backup branch exists: `backup-before-chatbot`
 
-**Port 5173 already in use:**
+To revert to pre-chatbot state if needed:
 ```bash
-# Kill the process using port 5173
-npx kill-port 5173
-# Or run on different port
-npm run dev -- --port 3000
-```
-
-**Node modules issues:**
-```bash
-# Remove node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
-
-**Build fails:**
-```bash
-# Clear cache and rebuild
-npm run build -- --force
+git checkout backup-before-chatbot
 ```
 
 ---
@@ -368,12 +458,14 @@ This project is open source and available under the [MIT License](LICENSE).
 
 | | |
 |---|---|
-| 📍 **Location** | Bangalore, Karnataka, India |
-| 💼 **Current Role** | Senior DevOps Engineer at AspenTech (Emerson) |
-| 🎓 **Education** | B.E. Aeronautical Engineering - Dayananda Sagar College of Engineering (VTU) |
-| 📧 **Email** | sanjaysundarmurthy@gmail.com |
-| 🔗 **LinkedIn** | [linkedin.com/in/sanjay-s-094586160](https://www.linkedin.com/in/sanjay-s-094586160/) |
-| 💻 **GitHub** | [github.com/SanjaySundarMurthy](https://github.com/SanjaySundarMurthy) |
+| 📍 Location | Bangalore, Karnataka, India |
+| 💼 Role | Senior DevOps Engineer @ AspenTech (Emerson) |
+| 🎓 Education | B.E. Aeronautical Engineering - DSCE (VTU) |
+| 📧 Email | sanjaysundarmurthy@gmail.com |
+| 📱 Phone | +91 9901244652 |
+| 🔗 LinkedIn | [linkedin.com/in/sanjay-s-094586160](https://www.linkedin.com/in/sanjay-s-094586160/) |
+| 💻 GitHub | [github.com/SanjaySundarMurthy](https://github.com/SanjaySundarMurthy) |
+| 🌐 Portfolio | [sanjaysundarmurthy-portfolio.vercel.app](https://sanjaysundarmurthy-portfolio.vercel.app) |
 
 ---
 
@@ -383,11 +475,14 @@ This project is open source and available under the [MIT License](LICENSE).
 - [Vite](https://vitejs.dev/) - Build Tool
 - [Tailwind CSS](https://tailwindcss.com/) - Styling
 - [Framer Motion](https://www.framer.com/motion/) - Animations
-- [React Icons](https://react-icons.github.io/react-icons/) - Icon Library
+- [Google Gemini AI](https://ai.google.dev/) - AI Chatbot
 - [EmailJS](https://www.emailjs.com/) - Email Service
+- [React Icons](https://react-icons.github.io/react-icons/) - Icons
+- [Vercel](https://vercel.com/) - Hosting
+- [Google Analytics](https://analytics.google.com/) - Analytics
 
 ---
 
-⭐ **If you found this portfolio helpful or inspiring, please give it a star!**
+⭐ **If you found this portfolio helpful, please give it a star!**
 
 Made with ❤️ by Sanjay S

@@ -364,7 +364,7 @@ const Chatbot = () => {
       {/* Floating Chat Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 p-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all ${
           isOpen ? 'hidden' : 'flex'
         }`}
         whileHover={{ scale: 1.1 }}
@@ -388,7 +388,7 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 z-50 w-[380px] h-[550px] flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-black/30"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[380px] h-[calc(100vh-6rem)] sm:h-[550px] max-h-[550px] flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-black/30"
             style={{
               background: 'linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(22, 27, 34, 0.98) 100%)',
               border: '1px solid rgba(255, 255, 255, 0.1)',

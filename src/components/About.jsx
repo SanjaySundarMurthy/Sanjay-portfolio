@@ -145,14 +145,14 @@ const About = ({ setCursorVariant }) => {
             </div>
 
             {/* Quick Info */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="glass rounded-xl p-4">
                 <span className="text-dark-500 text-sm">Location</span>
                 <p className="text-white font-medium">Bangalore, Karnataka</p>
               </div>
               <div className="glass rounded-xl p-4">
                 <span className="text-dark-500 text-sm">Email</span>
-                <p className="text-white font-medium text-sm">sanjaysundarmurthy@gmail.com</p>
+                <p className="text-white font-medium text-sm break-all">sanjaysundarmurthy@gmail.com</p>
               </div>
               <div className="glass rounded-xl p-4">
                 <span className="text-dark-500 text-sm">Education</span>
