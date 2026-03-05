@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { HiMenuAlt3, HiX, HiExternalLink } from 'react-icons/hi';
 
 const Navbar = ({ setCursorVariant }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,6 +15,8 @@ const Navbar = ({ setCursorVariant }) => {
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];
+
+  const blogUrl = 'https://dev.to/sanjaysundarmurthy';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,6 +119,21 @@ const Navbar = ({ setCursorVariant }) => {
             ))}
           </div>
 
+          {/* Blog Link */}
+          <motion.a
+            href={blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => setCursorVariant('button')}
+            onMouseLeave={() => setCursorVariant('default')}
+            className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-dark-300 hover:text-primary-400 transition-colors"
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 0 }}
+          >
+            Blog
+            <HiExternalLink size={14} />
+          </motion.a>
+
           {/* CTA Button */}
           <motion.a
             href="#contact"
@@ -183,6 +200,19 @@ const Navbar = ({ setCursorVariant }) => {
                   </motion.button>
                 ))}
               </div>
+
+              <motion.a
+                href={blogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 * 0.1 }}
+                className="text-left px-4 py-3 rounded-xl text-lg font-medium text-dark-200 hover:bg-white/5 hover:text-white transition-all flex items-center gap-2"
+              >
+                Blog
+                <HiExternalLink size={16} />
+              </motion.a>
 
               <motion.a
                 href="#contact"

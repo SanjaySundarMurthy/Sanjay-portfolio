@@ -10,11 +10,14 @@ const Footer = ({ setCursorVariant }) => {
     { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/sanjay-s-094586160/', label: 'LinkedIn' },
   ];
 
+  const blogUrl = 'https://dev.to/sanjaysundarmurthy';
+
   const footerLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
+    { label: 'Blog ↗', href: blogUrl, external: true },
   ];
 
   const scrollToTop = () => {
@@ -75,10 +78,14 @@ const Footer = ({ setCursorVariant }) => {
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  {...(link.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {
+                        onClick: (e) => {
+                          e.preventDefault();
+                          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                        },
+                      })}
                   onMouseEnter={() => setCursorVariant('button')}
                   onMouseLeave={() => setCursorVariant('default')}
                   whileHover={{ x: 5 }}
