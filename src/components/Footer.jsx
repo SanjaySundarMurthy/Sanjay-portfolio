@@ -11,6 +11,7 @@ const Footer = ({ setCursorVariant }) => {
   ];
 
   const blogUrl = 'https://dev.to/sanjaysundarmurthy';
+  const mediumUrl = 'https://medium.com/@sanjaysundarmurthy';
 
   const footerLinks = [
     { label: 'Home', href: '#home' },
@@ -18,6 +19,7 @@ const Footer = ({ setCursorVariant }) => {
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
     { label: 'Blog ↗', href: blogUrl, external: true },
+    { label: 'Medium ↗', href: mediumUrl, external: true },
   ];
 
   const scrollToTop = () => {
