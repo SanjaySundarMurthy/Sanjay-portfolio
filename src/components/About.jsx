@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HiCode, HiLightningBolt, HiSparkles, HiUserGroup } from 'react-icons/hi';
+import profileImg from '../assets/profile/profile.jpeg';
 
 const About = ({ setCursorVariant }) => {
   const [ref, inView] = useInView({
@@ -80,14 +81,13 @@ const About = ({ setCursorVariant }) => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary-500/20 via-dark-800 to-accent-500/20 flex items-center justify-center">
-                  {/* Placeholder for actual image */}
-                  <div className="text-center">
-                    <div className="w-48 h-48 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-6xl font-bold text-white animate-pulse-glow">
-                      <span style={{ fontFamily: 'Space Grotesk' }}>SS</span>
-                    </div>
-                    <p className="text-dark-400 text-sm">Sanjay S</p>
-                  </div>
+                <div className="w-full h-full rounded-2xl bg-gradient-to-br from-primary-500/20 via-dark-800 to-accent-500/20 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={profileImg}
+                    alt="Sanjay S - Senior DevOps Engineer"
+                    className="w-full h-full object-cover rounded-2xl"
+                    loading="lazy"
+                  />
                 </div>
 
                 {/* Floating elements */}
